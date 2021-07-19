@@ -16,6 +16,8 @@ slcttyp = input("""Enter "M" to play with another Player: """)
 
 if slcttyp == "M" or slcttyp =="m":
     print("You are playing against another player!")
+    Player1 = input("Player 1: Enter your Name: ")
+    Player2 = input("Player 2: Enter your Name: ")
 
 print("\nHere is your Board!")
 def gameboard():
@@ -26,7 +28,7 @@ def gameboard():
             n = n +1
         print()
 def moveplayer1():
-    moveP1 = int(input("Player 1: Please enter the number at where you want to place your symbol: "))
+    moveP1 = int(input(f"{Player1}: Please enter the number at where you want to place your symbol: "))
     histP1.append(moveP1)
 def moveplace():
     countr = 0
@@ -41,7 +43,7 @@ def moveplace():
                 print("-", end=' ')
         print()
 def moveplayer2():
-    moveP2 = int(input("Player 2: Please enter the number at where you want to place your symbol: "))
+    moveP2 = int(input(f"{Player2}: Please enter the number at where you want to place your symbol: "))
     histP2.append(moveP2)
 
 
@@ -61,13 +63,13 @@ def checkfun():
 
 if slcttyp == "M" or slcttyp == "m":
     gameboard()
-    symbP1 = input("""Player 1: Select your symbol "#" or "$": """)
+    symbP1 = input(f"""{Player1}: Select your symbol "#" or "$": """)
     if symbP1 == "#":
-        print("Player 1: Your symbol for the game is: #")
+        print(f"{Player1}: Your symbol for the game is: #")
     else:
-        print("Player 1: Your symbol for the game is: $")
-    symbP2 = input("""Player 2: Select your symbol "#" or "$": """)
-    print("Player 2: Your symbol for the game is: ", symbP2)
+        print(f"{Player1}: Your symbol for the game is: $")
+    symbP2 = input(f"""{Player2}: Select your symbol "#" or "$": """)
+    print(f"{Player2}: Your symbol for the game is: ", symbP2)
     while symbP2 == symbP1:
         symbP2 = input("""Select another symbol: """)
         if symbP2 == symbP1:
@@ -85,7 +87,7 @@ if slcttyp == "M" or slcttyp == "m":
         for i in range(len(win)):
             check1 = all(item in mastrH[0] for item in win[i])
             if check1 is True and len(mastrH[0]) >= 3:
-                print("Player 1 Winner")
+                print(f"{Player1} Winner")
                 print("Game Over!")
                 check = True
                 break
@@ -100,7 +102,7 @@ if slcttyp == "M" or slcttyp == "m":
         for i in range(len(win)):
             check2 = all(item in mastrH[1] for item in win[i])
             if check2 is True and len(mastrH[1]) >= 3:
-                print("Player 2 Winner!")
+                print(f"{Player2} Winner!")
                 print("Game Over!")
                 check = True
                 break

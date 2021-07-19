@@ -1,10 +1,3 @@
-# board for Tic Toc Toe with reference to positions of the board as below
-# 1 2 3
-# 4 5 6
-# 7 8 9
-
-import random
-
 # make lists for player 1 & player 2 in which the numbers will be saved
 histP1 = []
 histP2 = []
@@ -19,11 +12,9 @@ win = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 
 
 # select to play with computer or multiplayer
 
-slcttyp = input("""Enter "C" to play with Computer or "M" to play with another Player: """)
+slcttyp = input("""Enter "M" to play with another Player: """)
 
-if slcttyp == "C" or slcttyp == "c":
-    print("You are playing with the Computer!")
-elif slcttyp == "M" or slcttyp =="m":
+if slcttyp == "M" or slcttyp =="m":
     print("You are playing against another player!")
 
 print("\nHere is your Board!")
@@ -68,22 +59,7 @@ def checkfun():
     # if len(mastrH[0]) + len(mastrH[1]) == 9:
     #     print("Game Tie!")
 
-def computer_lst():
-    cmputerlst = []
-    while True:
-        number = random.randrange(1, 10)
-        if number not in cmputerlst:
-            cmputerlst.append(number)
-        else:
-            pass
-        if len(cmputerlst) == 9:
-            break
-    histP2.append(cmputerlst)
-
-if slcttyp == "C" or slcttyp == "c":
-   print("Game coming soon!")
-
-elif slcttyp == "M" or slcttyp == "m":
+if slcttyp == "M" or slcttyp == "m":
     gameboard()
     symbP1 = input("""Player 1: Select your symbol "#" or "$": """)
     if symbP1 == "#":

@@ -89,12 +89,12 @@ if slcttyp == "M" or slcttyp == "m":
                 print("Game Over!")
                 check = True
                 break
-            if len(mastrH[0]) + len(mastrH[1]) == 9:
-                print("Game Tie!")
-                check = True
-                break
         if check == True:
             break
+        if len(mastrH[0]) + len(mastrH[1]) == 9:
+            print("Game Tie!")
+            break
+
         moveplayer2()
         moveplace()
         for i in range(len(win)):
